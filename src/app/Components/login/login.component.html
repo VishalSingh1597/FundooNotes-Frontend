@@ -1,0 +1,102 @@
+<div class="container" fxFlex.xs=100>
+      <div class="container-form">         
+        <link rel="stylesheet" href="./login.component.scss">        
+    </div>
+    <div id="form-container" class="form" fxLayout="column" style="padding-top: 10%;">
+        <form [formGroup]="login">
+            <div class="FundooName" text-align="center">
+                <span style="color: red">F</span>
+                <span style="color: yellow">u</span>
+                <span style="color: green">n</span>
+                <span style="color: blue">d</span>
+                <span style="color: orange">o</span>
+                <span style="color: red">o</span><br><br>
+                  <span id="head">Create Your Fundoo Account</span>
+                   
+            </div>
+            <div class="username" fxLayout="column" style="margin-top: 50px;" fxlayout.xs="column">
+                <div>
+                    <mat-form-field appearance="outline" style="width: 90%; font-size: 13px;">
+                        <mat-label>User Name</mat-label>
+                        <input matInput placeholder="Placeholder" formControlName="Email" style="height: 5px;"
+                            [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" />
+                        <mat-hint *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+                            <mat-hint *ngIf="f.Email.errors.required" class="error">Email is required</mat-hint>
+                        </mat-hint>                    
+                           
+                    </mat-form-field>
+                    <button mat-button class="btn1" routerLink="/forgotemail">Forgot email?</button>
+                </div>
+                <div>
+                    <mat-form-field  appearance="outline" style="width: 90%;">
+                        <mat-label>password</mat-label>
+                        <input  matInput placeholder="Placeholder" formControlName="Password" style="height: 25px;"
+                            [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" />
+                        <mat-hint *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                            <mat-hint *ngIf="f.Password.errors.required" class="error">Password is required</mat-hint>
+                        </mat-hint>
+                    </mat-form-field>
+                    <button mat-button class="btn2" routerLink="/forget-password">Forgot Password</button>
+                              
+                </div>
+                <!-- <div style="font-size: 13px">
+                <p>
+                    Email id <br>
+                    <mat-form-field appearance="outline" style="width: 300px;">
+                        <input matInput style="height: 20px;" formControlName="Email">
+                        <mat-hint *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <mat-hint *ngIf="f.email.errors.required">Email is required</mat-hint>
+                            <mat-hint *ngIf="f.email.errors.email">Email must be a valid email address</mat-hint>
+                        </mat-hint>
+                    </mat-form-field>
+                </p>
+            </div>
+
+            <div style="font-size: 13px" class="container2">
+                <p>
+                    Password <br>
+                    <mat-form-field appearance="outline" style="width: 300px;">
+                        <input matInput [type]="hide ? 'password' : 'text'" style="height: 20px;"
+                            formControlName="Password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-hint *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <mat-hint *ngIf="f.password.errors.required">Enter Password</mat-hint>
+                            <mat-hint *ngIf="f.password.errors.minlength">Password must be at least 6 characters
+                            </mat-hint>
+                        </mat-hint>
+
+                    </mat-form-field>
+                </p>
+            </div> -->
+                <div class="button-section" fxLayoutAlign="space-between">
+                                <button mat-button class="button1" routerLink="/registration">Create Account</button>
+                    <button mat-raised-button class="button2" type="submit" (click)="onSubmit()">Next</button>
+                           
+                </div> 
+            </div>  
+        </form>             
+    </div>
+    <div class="Lang">
+          <select name="lang" id="lang">
+            <option value="">English (United States)</option>
+            <option value="">English (United Kingdom)</option>
+                        <option value="">Indonesia</option>
+             
+        </select>
+                   <ul class="list" fxLayout="row">
+                  <a href="">
+                <li id="l1">Help</li>
+            </a>
+                     <a href="">
+                <li id="l2">Privacy</li>
+            </a>
+                     <a href="">
+                <li id="l3">Terms</li>
+            </a></ul>    
+    </div>
+</div>
+
+   

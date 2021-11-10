@@ -1,0 +1,198 @@
+.container{
+    position: relative;
+    height: 420px;
+    width: 450px;
+    margin-top: 30px;
+    border:1px solid gray ;
+    margin: 6% auto;
+    padding: 3% 2%;
+    border-radius: 8px;
+}
+
+.FundooName{
+    margin-top: -50px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.btn1{
+    position: relative;
+    cursor: pointer;
+    top: -8px;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    background-color: white;
+    color: blue;
+    font-weight: bold;
+}
+.btn2{
+    cursor: pointer;
+    bottom: -20px;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    background-color: white;
+    color: blue;
+    font-weight: bold;
+}
+.button1{
+    cursor: pointer;
+    margin-top: 50px;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    background-color: white;
+    color: blue;
+    font-weight: bold;
+    margin-left: -90px;
+}     
+.button2{
+    cursor: pointer;
+    margin-top: 50px;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    background-color:blue;
+    color: white;
+    width: 50px;
+    height: 25px;
+    margin-left: 170px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.error{
+    color: red;
+}
+.langauge{
+    margin-top: 60px;
+    margin-left: -50px;
+}
+#lang{
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+}
+.list{
+    float: left;
+    margin-left: 240px;
+    margin-top: -20px;
+    cursor: pointer;
+}
+
+#l1{
+    display: flex;
+    flex-direction: row;
+    margin-right:30px;
+}
+
+#l2{
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    cursor: pointer;
+}
+#l3{
+    display: flex;
+    flex-direction: row;
+    margin-right:320px;
+}
+a:link{
+    text-decoration: none;
+    color: white;
+}
+a:visited{
+    color:black;
+}
+.Lang{
+    height: 100px;
+}
+@media only screen and (max-width: 599px) {
+    .container{
+        border:none;
+        padding: 4%;
+    }
+
+    .button-section{
+        margin-top: 10%;
+    }
+    .langauge{
+        position: relative;
+        margin-top: 50px;
+        left: -10px;
+        
+    }
+    .list{
+        float: left;
+        margin-left: 150px;
+        margin-top: -20px;
+    }
+    #l1{
+        display: flex;
+        flex-direction: row;
+        color: black;
+        margin-right: 10px;
+    }
+
+ #l2{
+        display: flex;
+        color: black;
+        flex-direction: row;
+        margin-right: 10px;
+    }
+    #l3{
+        display: flex;
+        color: black;
+        flex-direction: row;
+        margin-right: 5px;
+    }
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-label { margin-top:-15px; }
+::ng-deep label.ng-star-inserted { transform: translateY(-0.59375em) scale(.75) !important; }
+
+@media only screen and (max-width: 600px) {
+    .container{
+        border: none;
+    }
+
+    .FundooName{
+        text-align: center;
+    }
+    .list{
+        float: left;
+        margin-left: 150px;
+        margin-top: -20px;
+    }
+    #l1{
+        display: flex;
+        flex-direction: row;
+        color: black;
+        margin-right: 10px;
+    }
+    #l2{
+        display: flex;
+        color: black;
+        flex-direction: row;
+        margin-right: 10px;
+    }
+ 
+  #l3{
+        display: flex;
+        color: black;
+        flex-direction: row;
+        margin-right: 5px;
+    }
+    .button2{
+        margin-left: 80px;
+    }
+    .button1{
+        margin-left: -50px;
+    }
+}
+}

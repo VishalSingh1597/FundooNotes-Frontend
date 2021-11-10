@@ -1,0 +1,21 @@
+<div class="note-container" *ngFor="let note of allNotes">
+    <mat-card class="card">
+        <div class="mainBlock">
+            <div>
+                <strong >vishal</strong>
+                <button class="buttons" matTooltip="pin Note">
+                    <img class="pin" src="../../../assets/icons/pin.svg" alt="">
+                </button>
+                <div id="description" #description contenteditable="false" role="textbox" class="font n1"
+                    >singh
+                </div>
+                <div class="icon">
+                    <app-icons class="icons" ></app-icons>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>
