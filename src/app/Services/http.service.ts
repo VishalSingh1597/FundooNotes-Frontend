@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,10 +15,6 @@ export class HttpService
   Post(url: any, data: any, token: boolean=false, headers: any) {
     return this.http.post(this.BaseUrl + url, data , token && headers);
   }
-  // Post(url:string ,data:any=null,isHeaderRequired:any=false,headers:any=false)
-  // {
-  //   return this.http.post(url,data,isHeaderRequired && headers)
-  // }
   Get(url: any, headers: any)
   {
     return this.http.get(this.BaseUrl + url, headers);
@@ -31,5 +28,12 @@ export class HttpService
       })
     }
     return this.http.get(this.BaseUrl + url, options);
+  }
+
+  // Put(url:any,data:any,headers:any){
+  //   return this.http.put(this.BaseUrl + url,data,headers)
+  // }
+  Put(url: any, data: any, token: any, headers: any) {
+    return this.http.put(this.BaseUrl + url, data , token && headers);
   }
 }

@@ -9,16 +9,37 @@ import { NotesService } from 'src/app/Services/notes/notes.service';
 export class GetNotesComponent implements OnInit {
 
   token: any;
-  notesArray: any = []
-  window: any;
+  notesArray: any
+  
   
   constructor(private note: NotesService) { }
 
   ngOnInit(): void {
-  this.note.GetAllNotes(this.token).subscribe((notes:any) => {
-    let notesArray = notes.data.data;
-    notesArray.reverse();
-     console.log("the data",this.notesArray);
+    this.GetAllNotes();
+  }
+  GetAllNotes(){
+  this.note.GetAllNotes().subscribe((notes:any) => {
+    let notesArr = notes.data;
+    //  notesArray.reverse();
+     console.log("the data",notesArr);
+     this.notesArray=notesArr.reverse();
+
 })
   }
     }
+// ngOnInit(): void {
+//   this.GetAllNotes();
+// }
+
+// GetAllNotes() {
+//   this.note.GetAllNotes).subscribe((note: any) => {
+//       console.log(res);
+//       console.log(res.data);
+//       this.noteList = res.data.reverse();
+//     },
+//     (err) => {
+//       console.log(err);
+//     }
+//   );
+// }
+// }

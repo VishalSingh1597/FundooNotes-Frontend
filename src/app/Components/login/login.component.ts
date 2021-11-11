@@ -32,6 +32,12 @@ onSubmit(){
   this.userService.loginService(payload).subscribe((response:any) =>{
     console.log("response",response);
     localStorage.setItem("token",response.token);
+    localStorage.setItem("firstName",response.data.firstName);
+    localStorage.setItem("lastName",response.data.lastName);
+    localStorage.setItem("email",response.data.email);
+    localStorage.setItem("password",response.data.password);
+    localStorage.setItem("userId",response.data.userId);
+
     this.router.navigateByUrl('/dashboard/create-note')
   });
  

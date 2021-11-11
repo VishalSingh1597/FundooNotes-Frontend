@@ -27,6 +27,9 @@ import { IconsComponent } from './Components/icons/icons.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { DisplayNotesComponent } from './Components/display-notes/display-notes.component';
 import { GetNotesComponent } from './Components/get-notes/get-notes.component';
+import { UpdateNoteComponent } from './Components/update-note/update-note.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { GetNotesComponent } from './Components/get-notes/get-notes.component';
     CreateNoteComponent,
     IconsComponent,
     DisplayNotesComponent,
-    GetNotesComponent
+    GetNotesComponent,
+    UpdateNoteComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,8 @@ import { GetNotesComponent } from './Components/get-notes/get-notes.component';
     MatSidenavModule,
     MatIconModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
 
   ],
   providers: [],

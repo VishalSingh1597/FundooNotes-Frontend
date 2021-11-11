@@ -29,27 +29,47 @@ createNote(reqData: any) {
   return this.http.Post('/addnotes',reqData, true,options);
 
 }
-// GetAllNotes(){
-//   this.token= localStorage.getItem("token")
-//   console.log(this.token);
+GetAllNotes(){
+  this.token= localStorage.getItem("token")
+  console.log(this.token);
   
-//   let options = {
-//     headers: new HttpHeaders({
-//       'Content-Type': 'application/json',
-//       Authorization: 'Bearer ' + this.token
-//     })
-//   }
-//   console.log(options);
-//   return this.http.Get('/getNote', options);
-// }
-GetAllNotes(url: any) {
+  let options = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token
+    })
+  }
+  console.log(options);
+  return this.http.Get('/getNote', options);
+}
+GetallNotes(url: any) {
   return this.http.GetAllNotes('/getNote');
 }
 
-GetallNotes(url: any, headers: any) {
+updateNoteService(data:any){
+  const updatData = {
+    noteId: data.noteId,
+    userId:data.userId,
+    title: data.title,
+    description: data.description
+  }
+  console.log(updatData);
+  console.log(data);
+  
+  
+  this.token= localStorage.getItem("token")
+  console.log(this.token);
+  
+  let options={
+    headers: new HttpHeaders({
+      'Content-type': 'application/json',
+      Authorization: 'Bearer ' + this.token
+    })
+  }
+  return this.http.Put(`/updateNote?noteId=${data.noteId}&userId=${data.userId}&title=${data.title}&description=${data.description}`,data, this.token, options)
+}
 
-  return this.http.Get('/getNote', headers);
 }
-}
+
 
 

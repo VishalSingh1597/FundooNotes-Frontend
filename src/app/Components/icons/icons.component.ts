@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
+  @Input() noteId:any
+  @Input() note:any
+  @Input() noteData:any
   isExpandable: boolean = false
   isTrashComponent: boolean = false
   isArchive: boolean = false
