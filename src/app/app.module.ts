@@ -29,6 +29,8 @@ import { DisplayNotesComponent } from './Components/display-notes/display-notes.
 import { GetNotesComponent } from './Components/get-notes/get-notes.component';
 import { UpdateNoteComponent } from './Components/update-note/update-note.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { DeleteNoteComponent } from './Components/delete-note/delete-note.component';
+import { ArchivenotesComponent } from './Components/archivenotes/archivenotes.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     IconsComponent,
     DisplayNotesComponent,
     GetNotesComponent,
-    UpdateNoteComponent
+    UpdateNoteComponent,
+    DeleteNoteComponent,
+    ArchivenotesComponent
    
   ],
   imports: [

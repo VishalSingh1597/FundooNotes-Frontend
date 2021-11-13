@@ -68,7 +68,86 @@ updateNoteService(data:any){
   }
   return this.http.Put(`/updateNote?noteId=${data.noteId}&userId=${data.userId}&title=${data.title}&description=${data.description}`,data, this.token, options)
 }
+trashNotes(deleteData:any){
+  // const updatData = {
+  //   noteId: deleteData.noteId,
+  // }
+  console.log(deleteData.noteId);
+  // console.log(updatData);
+  
+  
+  this.token= localStorage.getItem('token')
+  let options={
+    headers:new HttpHeaders({
+      'content-type':'application/json',
+      'Authorization':'Bearer ' + this.token
+    })
+  }
+  console.log("options",options);
+  return this.http.Put(`/moveToTrash?noteId=${deleteData.noteId}`, deleteData, true,options )
+}
 
+getTrashNoteService(data:any){
+  console.log("data", data);
+  
+  let options = {
+    headers:new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization': 'Bearer ' + this.token
+    })
+  };
+  console.log(options);
+
+  return this.http.getService(`/getTrash?&userId=${data.userId}`,true, options);
+}
+deleteForEverNotes(deletedData:any){
+  this.token= localStorage.getItem('token')
+  let options={
+    headers:new HttpHeaders({
+      'content-type':'application/json',
+      'Authorization':'Bearer ' + this.token
+    })
+  }
+  console.log("options",options);
+  return this.http.Post('/deletenote', deletedData, true,options )
+}
+changeColorService(reqPayload: any) {
+  console.log(reqPayload);
+  
+  this.token= localStorage.getItem('token')
+  let options={
+    headers:new HttpHeaders({
+      'content-type':'application/json',
+      'Authorization':'Bearer ' + this.token
+    })
+  }
+  console.log("options",options);
+  return this.http.Put(`/changeColour?noteId=${reqPayload.noteId}&noteColor=${reqPayload.color}`, reqPayload, true,options )
+}
+
+archiveNotes(data:any){
+  this.token= localStorage.getItem('token')
+  let options={
+    headers:new HttpHeaders({
+      'content-type':'application/json',
+      'Authorization':'Bearer ' + this.token
+    })
+  }
+  console.log("options",options);
+  return this.http.Put(`/Archive?noteId=${data.noteId}`,data,true,options )
+}
+
+getArchiveNoteService(){
+  let options = {
+    headers:new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization': 'Bearer ' + this.token
+    })
+  };
+  console.log(options);
+
+  return this.http.getService('/getArchive',true,options);
+}
 }
 
 

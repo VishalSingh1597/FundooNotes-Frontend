@@ -60,9 +60,9 @@
       <mat-sidenav #snav opened="true" mode="side" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
         <mat-nav-list (mouseover)="isExpandable=true" (mouseleave)="isExpandable=false">
           <div class="navlist active" fxLayout="row" (mouseover)="isExpandable=true" fxLayoutAlign="start center"
-            fxLayoutGap="20px" routerLink='/dashboard/getnotes'>
+            fxLayoutGap="20px" routerLink='/dashboard/get-notes'>
             <button class="navBtn btnPosition" mat-icon-button>
-              <img routerLink='/dashboard/getnotes' src="../../../assets/dashboard/lightbulb.svg">
+              <img routerLink='/dashboard/get-notes' src="../../../assets/dashboard/lightbulb.svg">
             </button>
             <p class="navName" *ngIf="isExpandable">Notes</p>
           </div>

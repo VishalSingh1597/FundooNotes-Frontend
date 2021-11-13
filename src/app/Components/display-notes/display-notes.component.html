@@ -20,18 +20,18 @@
 </div> -->
 
 <div class="note-container" *ngFor= "let note of allNotes">
-    <mat-card class="card"  >
+    <mat-card class="card" [style.backgroundColor]="note.color" >
         <div class="mainBlock">
             <div>
-                <strong (click)="openDialog(note)">{{note.title}}</strong>
+                <strong [style.backgroundColor]="note.color" (click)="openDialog(note)">{{note.title}}</strong>
                 <button class="buttons" matTooltip="pin Note">
                     <img class="pin" src="../../../assets/icons/pin.svg"  alt="">
                 </button>
                 <div id="description" #description  role="textbox"
-                    class="font n1"  (click)="openDialog(note)">{{note.description}}
+                    class="font n1" [style.backgroundColor]="note.color" (click)="openDialog(note)">{{note.description}}
                 </div>
                 <div class="icon">
-                    <app-icons class="icons" [noteId]="note.id" [noteData]="note"></app-icons>
+                    <app-icons class="icons"[note]="note" [noteId]="note.id" [style.backgroundColor]="note.color" [noteData]="note"></app-icons>
                     <div >
                         
                     </div>

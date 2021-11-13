@@ -1,5 +1,5 @@
 <div class="container">
-    <div id="container" fxLayout='row' fxLayoutGap="4px">
+    <div id="container" fxLayout='row' fxLayoutGap="4px"  *ngIf="!isTrashComponent">
         <div class="icons">
             <button class="buttons">
                 <img class="icon" id="icon" src="../../../assets/icons/bellicon.svg" width="20" height="20" alt="">
@@ -12,9 +12,17 @@
         </div>
 
         <div class="icons">
-            <button class="buttons" matTooltip="Change colour">
+            <button [matMenuTriggerFor]="aboveMenu" class="buttons" matTooltip="Change colour">
                 <img class="icon" src="../../../assets/icons/colourpallete.svg" width="20" height="20" alt="">
-
+            <mat-menu #aboveMenu="matMenu"  yPosition="above">
+                <div class="color-menu">
+                <div *ngFor='let color of colors'>
+                   <button mat-menu-item class="color-button" [style.background]="color?.code" style="padding: 0px;"  (click)="setColor(color.code)">
+                      <mat-icon>circle</mat-icon>
+                   </button>
+                </div>
+                </div>
+             </mat-menu>
             </button>
 
         </div>
@@ -24,19 +32,37 @@
             </button>
         </div>
 
-        <div class="icons" matTooltip="archive">
-            <button class="buttons">
+        <div class="icons" matTooltip="archive" *ngIf="!isArchive">
+            <button class="buttons" (click)=" moveToArchive()">
                 <img class="icon" src="../../../assets/icons/archive.svg" width="20" height="20" alt="">
+            </button>
+        </div> 
+
+        <div class="icons"  matTooltip="unArchive" *ngIf="isArchive">
+            <button class="buttons" (click)="unArchive()" >
+                <img class="icon" src="../../../assets/icons/unarchive_black_24dp.svg" width="20" height="20" alt="">
             </button>
         </div>
 
-
-
-        <button class="buttons" matTooltip="more">
-            <img class="icons" src="../../../assets/icons/more.svg" width="20" height="20" alt="">
-
+        <button class="buttons" matTooltip="more"  [matMenuTriggerFor] = menu >
+            <img class="icons" src="../../../assets/icons/more.svg" width="20" height="20" alt=""  >
+            <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="moveToTrash()">Delete Note</button>  
+            <button mat-menu-item>Add Label</button>  
+            <button mat-menu-item>Add Drawing</button>  
+            </mat-menu>
 
         </button>
+</div>  
+
+<div *ngIf="isTrashComponent" fxLayout="row">
+    <div class="buttons"  matTooltip="Delete forever">
+        <img class="icons" src="../../../assets/icons/crossdelete (1).svg" alt="">
     </div>
+
+    <div class="buttons"    matTooltip="Restore">
+        <img class="icons" src="../../../assets/icons/deletearrow (1).svg" alt="">
+    </div>
+</div>
 
 </div>
