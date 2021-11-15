@@ -9,7 +9,7 @@ import { HttpService } from '../http.service';
 export class NotesService {
   headers:any;
   token: any;
-
+  id=localStorage.getItem('userId')
   constructor(private http: HttpService) { }
 
   url = environment.BaseUrl;
@@ -87,8 +87,9 @@ trashNotes(deleteData:any){
   return this.http.Put(`/moveToTrash?noteId=${deleteData.noteId}`, deleteData, true,options )
 }
 
-getTrashNoteService(data:any){
-  console.log("data", data);
+getTrashNoteService(){
+  var id=localStorage.getItem('userId')
+  console.log("my user id" + id);
   
   let options = {
     headers:new HttpHeaders({
@@ -98,8 +99,9 @@ getTrashNoteService(data:any){
   };
   console.log(options);
 
-  return this.http.getService(`/getTrash?&userId=${data.userId}`,true, options);
+  return this.http.getService('/getTrash',true, options);
 }
+
 deleteForEverNotes(deletedData:any){
   this.token= localStorage.getItem('token')
   let options={
@@ -109,7 +111,7 @@ deleteForEverNotes(deletedData:any){
     })
   }
   console.log("options",options);
-  return this.http.Post('/deletenote', deletedData, true,options )
+  return this.http.Delete(`/deletenote?noteId=${deletedData.noteId}`, deletedData,this.headers )
 }
 changeColorService(reqPayload: any) {
   console.log(reqPayload);

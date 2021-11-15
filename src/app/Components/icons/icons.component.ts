@@ -71,6 +71,38 @@ export class IconsComponent implements OnInit {
       });
     });
   }
+
+  deleteForever() {
+    let deletedData = {
+      noteId: [this.note.noteId],
+      isDeleted: false,
+    };
+    console.log(deletedData);
+    this.notes.deleteForEverNotes(deletedData).subscribe((result:any) => {
+      console.log(result);
+      this.router.navigateByUrl('/').then(() => {
+        this.router.navigate(['/dashboard/trash'])
+      });
+    });
+
+  }
+
+  restore() {
+    let restoreData = {
+      noteId: [this.note.noteId],
+      isDeleted: false,
+    };
+    console.log(restoreData);
+    this.notes.trashNotes(restoreData).subscribe(
+      (result:any) => {
+
+        console.log("Note restored successfully", result);
+        this.router.navigateByUrl('/').then(() => {
+          this.router.navigate(['/dashboard/trash'])
+        });
+      });
+  }
+  
   
   moveToArchive() {
 

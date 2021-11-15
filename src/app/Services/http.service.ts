@@ -36,9 +36,13 @@ export class HttpService
   Put(url: any, data: any, token: any, headers: any) {
     return this.http.put(this.BaseUrl + url, data , token && headers);
   }
-  Delete(url: string, data: any, token: any = false, headers: any = null) {
+  // Delete(url: string, data: any, headers: any = null) {
    
-    return this.http.post(this.BaseUrl + url, data, token && headers);
+  //   return this.http.delete(this.BaseUrl + url,  headers);
+  // }
+  Delete(url:string,data:any=null,isHeaderRequired :any=false, headers:any =null)
+  {
+    return this.http.delete(url,isHeaderRequired && headers)
   }
 
   getService(url: string='', token: boolean = false, headers:any=null) {

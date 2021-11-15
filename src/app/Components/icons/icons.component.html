@@ -57,11 +57,11 @@
 
 <div *ngIf="isTrashComponent" fxLayout="row">
     <div class="buttons"  matTooltip="Delete forever">
-        <img class="icons" src="../../../assets/icons/crossdelete (1).svg" alt="">
+        <img class="icons" (click)= "deleteForever()"src="../../../assets/icons/crossdelete (1).svg" alt="">
     </div>
 
     <div class="buttons"    matTooltip="Restore">
-        <img class="icons" src="../../../assets/icons/deletearrow (1).svg" alt="">
+        <img class="icons" (click)= "restore()" src="../../../assets/icons/deletearrow (1).svg" alt="">
     </div>
 </div>
 

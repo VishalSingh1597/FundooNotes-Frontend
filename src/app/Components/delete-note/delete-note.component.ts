@@ -21,15 +21,16 @@ token=localStorage.getItem('token')
   }
 
   getTrashNotes(){
-    this.note.GetAllNotes().subscribe((notes: any) => {
-           
-       this.notesArr = notes.data;
-      console.log(this.notesArr);
+    this.note.getTrashNoteService().subscribe((notes: any) => {
+      this.notesArray = notes.data.reverse();
+      console.log(this.notesArray);     
+      //  this.notesArray = notes.data;
+      // console.log(this.notesArr,"notesArr");
       
-      this.notesArray=this.notesArr.filter((notedata:any)=>{
-        return notedata.isDeleted == true;
-       });
-           console.log("the data",this.notesArray);
+      // this.notesArray=this.notesArray.filter((notedata:any)=>{
+      //   return notedata.isDeleted === true;
+      //  });
+      //      console.log("the data",this.notesArray);
     })
   }
 
